@@ -18,6 +18,7 @@ public class ForwardCommandTest {
 
     private ForwardCommand command;
     private  List<Obstacles> obstaclesList;
+    Position currentPosition;
 
     @Before
     public void setUp() {
@@ -25,30 +26,27 @@ public class ForwardCommandTest {
         obstaclesList = new ArrayList<>();
         obstaclesList.add(new Obstacles(2,2));
         obstaclesList.add(new Obstacles(1,3));
+        currentPosition = new Position("N", new Coordinates(1, 1));
     }
 
     @Test
     public void moveForward_shouldIncrementY_whenRoverFacingNorth() {
-        Position currentPosition = new Position("N", new Coordinates(1, 1));
         Position endPosition = command.executeCommand(obstaclesList, currentPosition);
-
         assertEquals(1, endPosition.getCoordinates().getX());
         assertEquals(2, endPosition.getCoordinates().getY());
     }
 
     @Test
     public void moveForward_shouldDecrementY_whenRoverFacingSouth() {
-
-        Position currentPosition = new Position("S", new Coordinates(1, 1));
+        currentPosition.setDirection("S");
         Position endPosition = command.executeCommand(obstaclesList,currentPosition);
-
         assertEquals(1, endPosition.getCoordinates().getX());
         assertEquals(0, endPosition.getCoordinates().getY());
     }
 
     @Test
     public void moveForward_shouldIncrementX_whenRoverFacingEast() {
-        Position currentPosition = new Position("E", new Coordinates(1, 1));
+        currentPosition.setDirection("E");
         Position endPosition = command.executeCommand(obstaclesList,currentPosition);
 
         assertEquals(2, endPosition.getCoordinates().getX());
@@ -57,7 +55,7 @@ public class ForwardCommandTest {
 
     @Test
     public void moveForward_shouldDecrementX_whenRoverFacingWest() {
-        Position currentPosition = new Position("W", new Coordinates(1, 1));
+        currentPosition.setDirection("W");
         Position endPosition = command.executeCommand(obstaclesList,currentPosition);
 
         assertEquals(0, endPosition.getCoordinates().getX());
@@ -66,14 +64,11 @@ public class ForwardCommandTest {
 
     @Test
     public void moveForward_shouldReturnCurrentPosition_whenRoverFacingDirectionIsInvalid() {
-        Position currentPosition = new Position("invalid direction", new Coordinates(1, 1));
+        currentPosition.setDirection("X");
         Position endPosition = command.executeCommand(obstaclesList,currentPosition);
 
         assertEquals(1, endPosition.getCoordinates().getX());
         assertEquals(1, endPosition.getCoordinates().getY());
     }
-
-
-
 
 }
