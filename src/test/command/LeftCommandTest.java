@@ -1,4 +1,4 @@
-package test;
+package test.command;
 
 import main.Coordinates;
 import main.command.LeftCommand;

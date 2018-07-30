@@ -1,4 +1,4 @@
-package test;
+package test.command;
 
 import main.Position;
 import org.junit.Before;
