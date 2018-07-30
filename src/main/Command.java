@@ -110,4 +110,16 @@ public class Command {
 
 
     }
+
+    public Position turnRight(Position currentPosition) {
+        Position resPosition = new Position(currentPosition.getDirectionFacing(),
+                currentPosition.getCoordinates());
+
+        if(currentPosition.getDirectionFacing().equals("E"))
+        {
+            resPosition.setDirection("S");
+        }
+
+        return resPosition;
+    }
 }

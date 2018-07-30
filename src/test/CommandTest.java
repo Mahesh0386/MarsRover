@@ -157,6 +157,18 @@ public class CommandTest {
 
     }
 
+    @Test
+    public void turnRight_shouldTurnSouth_whenDirectionIsEast() {
+        Command command = new Command();
+        Position currentPosition = new Position("E",new Coordinates(0,0));
+
+        Position endPosition = command.turnRight(currentPosition);
+        assertEquals("S", endPosition.getDirectionFacing());
+        assertEquals(0, endPosition.getCoordinates().getX());
+        assertEquals(0, endPosition.getCoordinates().getY());
+
+    }
+
 
 }
 
