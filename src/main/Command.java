@@ -3,34 +3,29 @@ package main;
 public class Command {
 
     public Position moveForward(Position currentPosition) {
-        Position finalPosition;
 
-        finalPosition = new Position(
-                currentPosition.getDirectionFacing(),
-                incrementYCoordinate(currentPosition.getCoordinates()));
+        switch (currentPosition.getDirectionFacing()) {
 
-        if (currentPosition.getDirectionFacing().equals("S")) {
-
-            finalPosition = new Position(
-                    currentPosition.getDirectionFacing(),
-                    decrementYCoordinate(currentPosition.getCoordinates()));
+            case "N":
+                return new Position(
+                        currentPosition.getDirectionFacing(),
+                        incrementYCoordinate(currentPosition.getCoordinates()));
+            case "S":
+                return new Position(
+                        currentPosition.getDirectionFacing(),
+                        decrementYCoordinate(currentPosition.getCoordinates()));
+            case "E":
+                return new Position(
+                        currentPosition.getDirectionFacing(),
+                        incrementXCoordinate(currentPosition.getCoordinates()));
+            case "W":
+                return new Position(
+                        currentPosition.getDirectionFacing(),
+                        decrementXCoordinate(currentPosition.getCoordinates()));
         }
 
-        if (currentPosition.getDirectionFacing().equals("E")) {
+        return null;
 
-            finalPosition = new Position(
-                    currentPosition.getDirectionFacing(),
-                    incrementXCoordinate(currentPosition.getCoordinates()));
-        }
-
-        if (currentPosition.getDirectionFacing().equals("W")) {
-
-            finalPosition = new Position(
-                    currentPosition.getDirectionFacing(),
-                    decrementXCoordinate(currentPosition.getCoordinates()));
-        }
-
-        return finalPosition;
     }
 
     private Coordinates decrementXCoordinate(Coordinates currentCoordinates) {
