@@ -4,7 +4,6 @@ public class Position {
 
     private String directionFacing;
     private Coordinates coordinates;
-    private Coordinates MaxCoordinates;
 
     public Position(String directionFacing, Coordinates coordinates) {
         this.directionFacing = directionFacing;
@@ -24,11 +23,6 @@ public class Position {
 
     }
 
-    public Coordinates getMaxCoordinates() {
-        return MaxCoordinates;
-    }
 
-    public void setMaxCoordinates(Coordinates maxCoordinates) {
-        MaxCoordinates = maxCoordinates;
-    }
+
 }

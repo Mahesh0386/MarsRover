@@ -107,6 +107,17 @@ public class CommandTest {
 
     }
 
+    @Test
+    public void turnNorth_whenCommandIsLeft_AndIfDirectionIsEast() {
+        Position currentPosition = new Position("E",new Coordinates(1,1));
+
+        Position endPosition = command.turnLeft(currentPosition);
+        assertEquals("N", endPosition.getDirectionFacing());
+        assertEquals(1, endPosition.getCoordinates().getX());
+        assertEquals(1, endPosition.getCoordinates().getY());
+
+    }
+
 
 }
 
