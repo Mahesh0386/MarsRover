@@ -7,37 +7,53 @@ public class Command {
 
         finalPosition = new Position(
                 currentPosition.getDirectionFacing(),
-                new Coordinates(
-                        currentPosition.getCoordinates().getX(),
-                        currentPosition.getCoordinates().getY() + 1));
+                incrementYCoordinate(currentPosition.getCoordinates()));
 
         if (currentPosition.getDirectionFacing().equals("S")) {
 
             finalPosition = new Position(
                     currentPosition.getDirectionFacing(),
-                    new Coordinates(
-                            currentPosition.getCoordinates().getX(),
-                            currentPosition.getCoordinates().getY() - 1));
+                    decrementYCoordinate(currentPosition.getCoordinates()));
         }
 
         if (currentPosition.getDirectionFacing().equals("E")) {
 
             finalPosition = new Position(
                     currentPosition.getDirectionFacing(),
-                    new Coordinates(
-                            currentPosition.getCoordinates().getX() + 1,
-                            currentPosition.getCoordinates().getY()));
+                    incrementXCoordinate(currentPosition.getCoordinates()));
         }
 
         if (currentPosition.getDirectionFacing().equals("W")) {
 
             finalPosition = new Position(
                     currentPosition.getDirectionFacing(),
-                    new Coordinates(
-                            currentPosition.getCoordinates().getX() - 1,
-                            currentPosition.getCoordinates().getY()));
+                    decrementXCoordinate(currentPosition.getCoordinates()));
         }
 
         return finalPosition;
+    }
+
+    private Coordinates decrementXCoordinate(Coordinates currentCoordinates) {
+        return new Coordinates(
+                currentCoordinates.getX() - 1,
+                currentCoordinates.getY());
+    }
+
+    private Coordinates incrementXCoordinate(Coordinates currentCoordinates) {
+        return new Coordinates(
+                currentCoordinates.getX() + 1,
+                currentCoordinates.getY());
+    }
+
+    private Coordinates decrementYCoordinate(Coordinates currentCoordinates) {
+        return new Coordinates(
+                currentCoordinates.getX(),
+                currentCoordinates.getY() - 1);
+    }
+
+    private Coordinates incrementYCoordinate(Coordinates currentCoordinates) {
+        return new Coordinates(
+                currentCoordinates.getX(),
+                currentCoordinates.getY() + 1);
     }
 }
