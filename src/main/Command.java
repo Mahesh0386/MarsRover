@@ -32,33 +32,33 @@ public class Command {
     }
 
     public Position turnLeft(Position currentPosition) {
-        Position resPosition = new Position(currentPosition.getDirectionFacing(),
+        Position finalPosition = new Position(currentPosition.getDirectionFacing(),
                 currentPosition.getCoordinates());
 
         switch(currentPosition.getDirectionFacing())
         {
             case "N":
             {
-                resPosition.setDirection("W");
-                return resPosition;
+                finalPosition.setDirection("W");
+                return finalPosition;
             }
             case "S":
             {
-                resPosition.setDirection("E");
-                return resPosition;
+                finalPosition.setDirection("E");
+                return finalPosition;
             }
             case "W":
             {
-                resPosition.setDirection("S");
-                return resPosition;
+                finalPosition.setDirection("S");
+                return finalPosition;
             }
             case "E":
             {
-                resPosition.setDirection("N");
-                return resPosition;
+                finalPosition.setDirection("N");
+                return finalPosition;
             }
             default:
-                return resPosition;
+                return finalPosition;
 
         }
 
@@ -66,33 +66,33 @@ public class Command {
     }
 
     public Position turnRight(Position currentPosition) {
-        Position resPosition = new Position(currentPosition.getDirectionFacing(),
+        Position finalPosition = new Position(currentPosition.getDirectionFacing(),
                 currentPosition.getCoordinates());
 
         switch(currentPosition.getDirectionFacing())
         {
             case "N":
             {
-                resPosition.setDirection("E");
-                return resPosition;
+                finalPosition.setDirection("E");
+                return finalPosition;
             }
             case "S":
             {
-                resPosition.setDirection("W");
-                return resPosition;
+                finalPosition.setDirection("W");
+                return finalPosition;
             }
             case "W":
             {
-                resPosition.setDirection("N");
-                return resPosition;
+                finalPosition.setDirection("N");
+                return finalPosition;
             }
             case "E":
             {
-                resPosition.setDirection("S");
-                return resPosition;
+                finalPosition.setDirection("S");
+                return finalPosition;
             }
             default:
-                return resPosition;
+                return finalPosition;
 
         }
 
