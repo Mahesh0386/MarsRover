@@ -49,4 +49,12 @@ public class Command {
                 currentCoordinates.getX(),
                 currentCoordinates.getY() + 1);
     }
+
+    public Position moveBackward(Position currentPosition) {
+
+
+        return new Position(currentPosition.getDirectionFacing(),
+                new Coordinates((currentPosition.getCoordinates().getX())-1,
+                currentPosition.getCoordinates().getY()));
+    }
 }

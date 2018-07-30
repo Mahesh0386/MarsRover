@@ -63,5 +63,18 @@ public class CommandTest {
         assertEquals(1, endPosition.getCoordinates().getX());
         assertEquals(1, endPosition.getCoordinates().getY());
     }
+
+
+    @Test
+    public void moveBackward_shouldDecrementY_whenRoverFacingNorth() {
+
+        Position currentPosition = new Position("N", new Coordinates(1, 1));
+        Position endPosition = command.moveBackward(currentPosition);
+
+        assertEquals(0, endPosition.getCoordinates().getX());
+        assertEquals(1, endPosition.getCoordinates().getY());
+
+    }
+
 }
 
