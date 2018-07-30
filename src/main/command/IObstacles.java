@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface IObstacles {
 
-    boolean isObstaclesFound(List<Obstacles> ObstaclesList, Position currentPosition);
+    Position executeCommand(List<Obstacles> ObstaclesList, Position currentPosition);
 
 }
