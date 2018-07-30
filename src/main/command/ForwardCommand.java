@@ -12,16 +12,20 @@ public class ForwardCommand implements IObstacles {
     public static String isObstacleFound = "No";
     public Position executeCommand( List<Obstacles> obstaclesList,Position currentPosition)
     {
+        ObstacleDetector obstacleDetector = new ObstacleDetector();
+
         switch (currentPosition.getDirectionFacing()) {
             case "N":
-                if(!isObstaclesFound(obstaclesList, currentPosition)){
+                if(obstacleDetector.isObstaclesFound(obstaclesList, currentPosition)){
                     isObstacleFound = "Obstacle Found!";
                     System.out.println(isObstacleFound);
                     return currentPosition;
                 }
+                else{
                 return new Position(
                         currentPosition.getDirectionFacing(),
                         incrementYCoordinate(currentPosition.getCoordinates()));
+                }
             case "S":
                 return new Position(
                         currentPosition.getDirectionFacing(),
@@ -39,18 +43,6 @@ public class ForwardCommand implements IObstacles {
         }
     }
 
-    private boolean isObstaclesFound(List<Obstacles> obstaclesList, Position currentPosition) {
-        boolean isObstaclesFound = false;
-        Position currentPos = currentPosition;
-        for (Obstacles obstacle : obstaclesList) {
-            if ((currentPos.getCoordinates().getX() == obstacle.getX()) &&
-                    (currentPos.getCoordinates().getY()+1 == obstacle.getY())) {
-                currentPos = currentPosition;
-                isObstaclesFound = true;
-            }
-        }
-        return isObstaclesFound;
-    }
 
 
 }

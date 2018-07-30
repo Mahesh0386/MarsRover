@@ -24,7 +24,7 @@ public class ForwardCommandTest {
         command = new ForwardCommand();
         obstaclesList = new ArrayList<>();
         obstaclesList.add(new Obstacles(2,2));
-        obstaclesList.add(new Obstacles(2,3));
+        obstaclesList.add(new Obstacles(1,3));
     }
 
     @Test
@@ -73,16 +73,7 @@ public class ForwardCommandTest {
         assertEquals(1, endPosition.getCoordinates().getY());
     }
 
-    @Test
-    public void isObstacleFound_shouldReturnLastPossiblePosition_andReportObstacle()
-    {
-        Position currentPosition = new Position("N",new Coordinates(1,2));
-        Position endPosition =  command.executeCommand(obstaclesList,currentPosition);
-        assertEquals(1, endPosition.getCoordinates().getX());
-        assertEquals(2,endPosition.getCoordinates().getY());
-        assertEquals("Obstacle Found!",ForwardCommand.isObstacleFound);
 
-    }
 
 
 }
