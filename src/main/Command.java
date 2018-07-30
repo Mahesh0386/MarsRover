@@ -53,8 +53,27 @@ public class Command {
     public Position moveBackward(Position currentPosition) {
 
 
-        return new Position(currentPosition.getDirectionFacing(),
-                new Coordinates((currentPosition.getCoordinates().getX())-1,
-                currentPosition.getCoordinates().getY()));
+        switch (currentPosition.getDirectionFacing()) {
+            case "N":
+                return new Position(
+                        currentPosition.getDirectionFacing(),
+                        decrementXCoordinate(currentPosition.getCoordinates()));
+            case "S":
+                return new Position(
+                        currentPosition.getDirectionFacing(),
+                        incrementXCoordinate(currentPosition.getCoordinates()));
+            case "E":
+                return new Position(
+                        currentPosition.getDirectionFacing(),
+                        decrementXCoordinate(currentPosition.getCoordinates()));
+            case "W":
+                return new Position(
+                        currentPosition.getDirectionFacing(),
+                        incrementXCoordinate(currentPosition.getCoordinates()));
+            default:
+                return currentPosition;
+        }
+
+
     }
 }
