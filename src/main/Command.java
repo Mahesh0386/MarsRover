@@ -5,7 +5,6 @@ public class Command {
     public Position moveForward(Position currentPosition) {
 
         switch (currentPosition.getDirectionFacing()) {
-
             case "N":
                 return new Position(
                         currentPosition.getDirectionFacing(),
@@ -22,10 +21,9 @@ public class Command {
                 return new Position(
                         currentPosition.getDirectionFacing(),
                         decrementXCoordinate(currentPosition.getCoordinates()));
+            default:
+                return currentPosition;
         }
-
-        return null;
-
     }
 
     private Coordinates decrementXCoordinate(Coordinates currentCoordinates) {
