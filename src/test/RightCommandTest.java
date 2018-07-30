@@ -23,7 +23,7 @@ public class RightCommandTest {
     public void turnRight_shouldTurnSouth_whenDirectionIsEast() {
         Position currentPosition = new Position("E",new Coordinates(0,0));
 
-        Position endPosition = command.turnRight(currentPosition);
+        Position endPosition = command.executeCommand(currentPosition);
         assertEquals("S", endPosition.getDirectionFacing());
         assertEquals(0, endPosition.getCoordinates().getX());
         assertEquals(0, endPosition.getCoordinates().getY());
@@ -34,7 +34,7 @@ public class RightCommandTest {
     public void turnRight_shouldTurnNorth_whenDirectionIsWest() {
         Position currentPosition = new Position("W",new Coordinates(0,0));
 
-        Position endPosition = command.turnRight(currentPosition);
+        Position endPosition = command.executeCommand(currentPosition);
         assertEquals("N", endPosition.getDirectionFacing());
         assertEquals(0, endPosition.getCoordinates().getX());
         assertEquals(0, endPosition.getCoordinates().getY());
@@ -45,7 +45,7 @@ public class RightCommandTest {
     public void turnRight_shouldTurnWest_whenDirectionIsSuth() {
         Position currentPosition = new Position("S",new Coordinates(0,0));
 
-        Position endPosition = command.turnRight(currentPosition);
+        Position endPosition = command.executeCommand(currentPosition);
         assertEquals("W", endPosition.getDirectionFacing());
         assertEquals(0, endPosition.getCoordinates().getX());
         assertEquals(0, endPosition.getCoordinates().getY());
@@ -56,7 +56,7 @@ public class RightCommandTest {
     public void turnRight_shouldTurnEast_whenDirectionIsNorth() {
         Position currentPosition = new Position("N",new Coordinates(0,0));
 
-        Position endPosition = command.turnRight(currentPosition);
+        Position endPosition = command.executeCommand(currentPosition);
         assertEquals("E", endPosition.getDirectionFacing());
         assertEquals(0, endPosition.getCoordinates().getX());
         assertEquals(0, endPosition.getCoordinates().getY());

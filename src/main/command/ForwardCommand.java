@@ -4,9 +4,9 @@ import main.Position;
 
 import static main.CoordinateManipulator.*;
 
-public class ForwardCommand {
+public class ForwardCommand implements ICommand {
 
-    public Position moveForward(Position currentPosition) {
+    public Position executeCommand(Position currentPosition) {
 
         switch (currentPosition.getDirectionFacing()) {
             case "N":

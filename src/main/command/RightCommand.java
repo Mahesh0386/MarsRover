@@ -2,31 +2,26 @@ package main.command;
 
 import main.Position;
 
-public class RightCommand {
+public class RightCommand implements ICommand {
 
-    public Position turnRight(Position currentPosition) {
+    public Position executeCommand(Position currentPosition) {
         Position finalPosition = new Position(currentPosition.getDirectionFacing(),
                 currentPosition.getCoordinates());
 
-        switch(currentPosition.getDirectionFacing())
-        {
-            case "N":
-            {
+        switch (currentPosition.getDirectionFacing()) {
+            case "N": {
                 finalPosition.setDirection("E");
                 return finalPosition;
             }
-            case "S":
-            {
+            case "S": {
                 finalPosition.setDirection("W");
                 return finalPosition;
             }
-            case "W":
-            {
+            case "W": {
                 finalPosition.setDirection("N");
                 return finalPosition;
             }
-            case "E":
-            {
+            case "E": {
                 finalPosition.setDirection("S");
                 return finalPosition;
             }
