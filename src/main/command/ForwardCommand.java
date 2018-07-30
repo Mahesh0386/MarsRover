@@ -1,4 +1,6 @@
-package main;
+package main.command;
+
+import main.Position;
 
 import static main.CoordinateManipulator.*;
 

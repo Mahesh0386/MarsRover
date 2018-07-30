@@ -1,8 +1,10 @@
-package main;
+package main.command;
 
-public class LeftCommand {
+import main.Position;
 
-    public Position turnLeft(Position currentPosition) {
+public class RightCommand {
+
+    public Position turnRight(Position currentPosition) {
         Position finalPosition = new Position(currentPosition.getDirectionFacing(),
                 currentPosition.getCoordinates());
 
@@ -10,29 +12,28 @@ public class LeftCommand {
         {
             case "N":
             {
-                finalPosition.setDirection("W");
+                finalPosition.setDirection("E");
                 return finalPosition;
             }
             case "S":
             {
-                finalPosition.setDirection("E");
+                finalPosition.setDirection("W");
                 return finalPosition;
             }
             case "W":
             {
-                finalPosition.setDirection("S");
+                finalPosition.setDirection("N");
                 return finalPosition;
             }
             case "E":
             {
-                finalPosition.setDirection("N");
+                finalPosition.setDirection("S");
                 return finalPosition;
             }
             default:
                 return finalPosition;
 
         }
-
 
     }
 }

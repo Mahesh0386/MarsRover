@@ -1,11 +1,10 @@
 package test;
 
-import main.BackwardCommand;
 import main.Position;
 import org.junit.Before;
 import org.junit.Test;
 
-import main.RightCommand;
+import main.command.RightCommand;
 import main.Coordinates;
 
 import static org.junit.Assert.assertEquals;

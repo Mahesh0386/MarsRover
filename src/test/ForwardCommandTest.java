@@ -1,7 +1,7 @@
 package test;
 
 import main.Coordinates;
-import main.ForwardCommand;
+import main.command.ForwardCommand;
 import main.Position;
 import org.junit.Before;
 import org.junit.Test;

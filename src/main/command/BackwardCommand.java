@@ -1,12 +1,14 @@
-package main;
+package main.command;
+
+import main.Position;
 
 import static main.CoordinateManipulator.decrementXCoordinate;
 import static main.CoordinateManipulator.incrementXCoordinate;
 
-public class BackwardCommand {
+public class BackwardCommand implements ICommand {
 
-    public Position moveBackward(Position currentPosition) {
-
+    @Override
+    public Position executeCommand(Position currentPosition) {
 
         switch (currentPosition.getDirectionFacing()) {
             case "N":
@@ -28,9 +30,5 @@ public class BackwardCommand {
             default:
                 return currentPosition;
         }
-
-
     }
-
-
 }
