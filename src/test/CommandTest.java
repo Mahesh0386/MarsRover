@@ -169,6 +169,42 @@ public class CommandTest {
 
     }
 
+    @Test
+    public void turnRight_shouldTurnNorth_whenDirectionIsWest() {
+        Command command = new Command();
+        Position currentPosition = new Position("W",new Coordinates(0,0));
+
+        Position endPosition = command.turnRight(currentPosition);
+        assertEquals("N", endPosition.getDirectionFacing());
+        assertEquals(0, endPosition.getCoordinates().getX());
+        assertEquals(0, endPosition.getCoordinates().getY());
+
+    }
+
+    @Test
+    public void turnRight_shouldTurnWest_whenDirectionIsSuth() {
+        Command command = new Command();
+        Position currentPosition = new Position("S",new Coordinates(0,0));
+
+        Position endPosition = command.turnRight(currentPosition);
+        assertEquals("W", endPosition.getDirectionFacing());
+        assertEquals(0, endPosition.getCoordinates().getX());
+        assertEquals(0, endPosition.getCoordinates().getY());
+
+    }
+
+    @Test
+    public void turnRight_shouldTurnEast_whenDirectionIsNorth() {
+        Command command = new Command();
+        Position currentPosition = new Position("N",new Coordinates(0,0));
+
+        Position endPosition = command.turnRight(currentPosition);
+        assertEquals("E", endPosition.getDirectionFacing());
+        assertEquals(0, endPosition.getCoordinates().getX());
+        assertEquals(0, endPosition.getCoordinates().getY());
+
+    }
+
 
 }
 

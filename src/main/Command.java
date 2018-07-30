@@ -115,11 +115,32 @@ public class Command {
         Position resPosition = new Position(currentPosition.getDirectionFacing(),
                 currentPosition.getCoordinates());
 
-        if(currentPosition.getDirectionFacing().equals("E"))
+        switch(currentPosition.getDirectionFacing())
         {
-            resPosition.setDirection("S");
+            case "N":
+            {
+                resPosition.setDirection("E");
+                return resPosition;
+            }
+            case "S":
+            {
+                resPosition.setDirection("W");
+                return resPosition;
+            }
+            case "W":
+            {
+                resPosition.setDirection("N");
+                return resPosition;
+            }
+            case "E":
+            {
+                resPosition.setDirection("S");
+                return resPosition;
+            }
+            default:
+                return resPosition;
+
         }
 
-        return resPosition;
     }
 }
