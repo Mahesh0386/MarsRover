@@ -9,7 +9,7 @@ import static main.CoordinateManipulator.*;
 
 public class ForwardCommand implements IObstacles {
 
-    public static String isObstacleFound = "No";
+
     public Position executeCommand( List<Obstacles> obstaclesList,Position currentPosition)
     {
         ObstacleDetector obstacleDetector = new ObstacleDetector();
@@ -17,8 +17,7 @@ public class ForwardCommand implements IObstacles {
         switch (currentPosition.getDirectionFacing()) {
             case "N":
                 if(obstacleDetector.isObstaclesFound(obstaclesList, currentPosition)){
-                    isObstacleFound = "Obstacle Found!";
-                    System.out.println(isObstacleFound);
+                    System.out.println(ObstacleDetector.isObstacleReporting);
                     return currentPosition;
                 }
                 else{
